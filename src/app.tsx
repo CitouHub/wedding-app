@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import './app.css'
-import Layout from './section/layout'
+import Layout from './layout'
 import { ROUTE_SETUP } from './infrastructure/route-setup'
 
 export default function App() {

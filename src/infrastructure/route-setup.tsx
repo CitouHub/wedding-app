@@ -5,7 +5,6 @@ import {
     ROUTE_PATH_TRACK
 } from "./route";
 import { RouteCategory } from './route-category';
-import Welcome from '../section/-welcome/welcome';
 import Track from '../track';
 
 export const ROUTE_CATEGORY_WELCOME_TITLE = "Start";
@@ -19,7 +18,7 @@ export const ROUTE_SETUP: RouteCategory[] = [
                 name: "Start - Välkommen",
                 path: ROUTE_PATH_WELCOME,
                 icon: <HomeIcon />,
-                component: <Welcome />
+                component: <p>asdf</p>
             }
         ]
     },
