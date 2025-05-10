@@ -1,19 +1,19 @@
-name: Wedding app release
+name: Deploy Risk assessment frontend
 
 env:
+  AZURE_WEBAPP_NAME: wa-risk-assessment-frontend
+  AZURE_WEBAPP_PACKAGE_PATH: '.'
   NODE_VERSION: '22'
-  AZURE_STATIC_WEBAPP_NAME: 'swa-wedding-app'
+  VITE_APP_API_URL: https://wa-risk-assessment-backend.azurewebsites.net
 
 on:
   release:
     types: [published]
 
 jobs:
-  build_frontend:
-    name: Wedding app build
+  build-frontend:
+    name: Build frontend
     runs-on: windows-2022
-    env:
-      NODE_VERSION: '22'
 
     steps:
       - name: Checkout code
@@ -29,36 +29,38 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          VITE_APP_API_URL: ${{ env.VITE_APP_API_URL }} 
 
       - name: Include static web site config
-        run: move staticwebapp.config.json build
+        run: move staticwebapp.config.json dist
 
-      - name: Upload build artifact
+      - name: Upload backend app to deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.AZURE_STATIC_WEBAPP_NAME }}
+          name: ${{ env.AZURE_WEBAPP_NAME }}
           path: dist
 
-  deploy_frontend:
-    name: Wedding app deloy
+  deploy-frontend:
+    name: Deploy frontend
     runs-on: ubuntu-24.04
-    needs: build_frontend
+    needs: build-frontend
 
     steps:
-      - name: Download build artifact
+      - name: Download frontend app from build job
         uses: actions/download-artifact@v4
         with:
-          name: ${{ env.AZURE_STATIC_WEBAPP_NAME }}
+          name: ${{ env.AZURE_WEBAPP_NAME }}
 
-      - name: Deploy to Azure Static Web App
+      - name: Deploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEBAPP_UI_TOKEN_PRODUCTION }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEBAPP_UI_DEPLOYMENT_TOKEN }}
           action: "upload"
-          app_location: "/"
 
-      - name: Delete build artifact
+      - name: Delete deploy artifact
         if: always()
         uses: geekyeggo/delete-artifact@v5
         with:
-            name: ${{ env.AZURE_STATIC_WEBAPP_NAME }}
+            name: ${{ env.AZURE_WEBAPP_NAME }}
+        
