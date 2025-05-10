@@ -1,0 +1,14 @@
+.projectWrapper {
+    padding-bottom: 1rem;
+}
+
+.projectRow {
+    display: flex;
+    justify-content: center
+}
+
+@media screen and (max-width: calc(4rem + 600px)) {
+    .projectRow {
+        display: block;
+    }
+}

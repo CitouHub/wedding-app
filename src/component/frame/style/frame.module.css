@@ -1,0 +1,44 @@
+.top {
+    width: 100vw;
+    height: 15vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+}
+
+.centerContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .centerContent > div {
+        display: flex;
+        height: 100%;
+        align-items: center
+    }
+
+.logo {
+    height: 5vh;
+    margin-right: 1rem;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 500px) {
+    .top {
+        height: 10vh;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .logo {
+        height: 8vh;
+        margin-right: 0rem;
+    }
+}

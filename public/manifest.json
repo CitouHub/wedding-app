@@ -1,0 +1,23 @@
+{
+    "short_name": "Risk bedömning",
+    "name": "Risk bedömning",
+    "description": "I denna applikation kan du få hjälp att göra en full risk bedömning och värdering av en nybyggnad, ombyggnad, eller vad du än bygger. Denna risk rapport skickar du sedan till din kommun.",
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "logo256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        }
+    ],
+    "id": "/",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "screenshots": []
+}
