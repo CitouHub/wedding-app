@@ -189,73 +189,75 @@ export default function Track() {
             <div className='item'>
                 {trackIndex !== undefined && <div className="item-content">
                     <audio controls src={track.file} />
-                    <TextField
-                        type='text'
-                        className="helpText"
-                        label="Artist"
-                        value={guess.artist}
-                        disabled={guessScore !== undefined}
-                        onChange={e => {
-                            setGuess({ ...guess, artist: e.target.value })
-                        }}
-                        helperText={guessScore !== undefined ? `Rätt är: "${track.artist}", poäng: ${guessScore.artist}` : ''}
-                        sx={{
-                            input: {
-                                background: "white"
-                            }
-                        }}
-                    />
-                    <TextField
-                        type='text'
-                        className="helpText"
-                        label="Titel"
-                        value={guess.title}
-                        disabled={guessScore !== undefined}
-                        onChange={e => {
-                            setGuess({ ...guess, title: e.target.value })
-                        }}
-                        helperText={guessScore !== undefined ? `Rätt är: "${track.title}", poäng: ${guessScore.title}` : ''}
-                        sx={{
-                            input: {
-                                background: "white"
-                            }
-                        }}
-                    />
-                    <TextField
-                        type='number'
-                        className="helpText"
-                        label="År"
-                        value={guess.year}
-                        disabled={guessScore !== undefined}
-                        onChange={e => {
-                            setGuess({ ...guess, year: Number(e.target.value) })
-                        }}
-                        helperText={guessScore !== undefined ? `Rätt är: "${track.year}", poäng: ${guessScore.year}` : ''}
-                        sx={{
-                            input: {
-                                background: "white"
-                            }
-                        }}
-                    />
-                    {guessScore === undefined && <Button
-                        id={`info-button`}
-                        variant="contained"
-                        onClick={validateGuess}
-                        sx={{
-                            background: "#4ea5de",
-                            color: "black"
-                        }}
-                    >
-                        Gissa låten
-                    </Button>}
-                    {guessScore !== undefined && <div style={{ maxWidth: '300px', paddingTop: '1rem' }}>
-                        Poäng totalt: {getTotalScore()}
-                        {getTotalScore() === 9 && <p>GODE GUD!!! Sjukt imponerande! Fan vilket kejsarpar ni är! Jag bugar framförer er djupt</p>}
-                        {getTotalScore() <= 8 && getTotalScore() >= 6 && <p>Fantastisk! Akhila, jag är glad att du hittad Leo</p>}
-                        {getTotalScore() <= 5 && getTotalScore() >= 4 && <p>Snyggt! Ni är gryma tillsamans, jag blir glad varje gång jag ser er!</p>}
-                        {getTotalScore() <= 3 && getTotalScore() >= 1 && <p>...nja MYCKET mer än hade jag väntat mig. Akhila ge Leo lite smisk!</p>}
-                        {getTotalScore() === 0 && <p>Men... Men... Leo och Akhila... FAN va besviken jag är...</p>}
-                    </div>}
+                    <div className="item-form">
+                        {guessScore !== undefined && <div style={{ maxWidth: '300px', paddingTop: '1rem' }}>
+                            Poäng totalt: {getTotalScore()}
+                            {getTotalScore() === 9 && <p>GODE GUD!!! Sjukt imponerande! Fan vilket kejsarpar ni är! Jag bugar framförer er djupt</p>}
+                            {getTotalScore() <= 8 && getTotalScore() >= 6 && <p>Fantastisk! Akhila, jag är glad att du hittad Leo</p>}
+                            {getTotalScore() <= 5 && getTotalScore() >= 4 && <p>Snyggt! Ni är gryma tillsamans, jag blir glad varje gång jag ser er!</p>}
+                            {getTotalScore() <= 3 && getTotalScore() >= 1 && <p>...nja MYCKET mer än hade jag väntat mig. Akhila ge Leo lite smisk!</p>}
+                            {getTotalScore() === 0 && <p>Men... Men... Leo och Akhila... FAN va besviken jag är...</p>}
+                        </div>}
+                        <TextField
+                            type='text'
+                            className="helpText"
+                            label="Artist"
+                            value={guess.artist}
+                            disabled={guessScore !== undefined}
+                            onChange={e => {
+                                setGuess({ ...guess, artist: e.target.value })
+                            }}
+                            helperText={guessScore !== undefined ? `Rätt är: "${track.artist}", poäng: ${guessScore.artist}` : ''}
+                            sx={{
+                                input: {
+                                    background: "white"
+                                }
+                            }}
+                        />
+                        <TextField
+                            type='text'
+                            className="helpText"
+                            label="Titel"
+                            value={guess.title}
+                            disabled={guessScore !== undefined}
+                            onChange={e => {
+                                setGuess({ ...guess, title: e.target.value })
+                            }}
+                            helperText={guessScore !== undefined ? `Rätt är: "${track.title}", poäng: ${guessScore.title}` : ''}
+                            sx={{
+                                input: {
+                                    background: "white"
+                                }
+                            }}
+                        />
+                        <TextField
+                            type='number'
+                            className="helpText"
+                            label="År"
+                            value={guess.year}
+                            disabled={guessScore !== undefined}
+                            onChange={e => {
+                                setGuess({ ...guess, year: Number(e.target.value) })
+                            }}
+                            helperText={guessScore !== undefined ? `Rätt är: "${track.year}", poäng: ${guessScore.year}` : ''}
+                            sx={{
+                                input: {
+                                    background: "white"
+                                }
+                            }}
+                        />
+                        {guessScore === undefined && <Button
+                            id={`info-button`}
+                            variant="contained"
+                            onClick={validateGuess}
+                            sx={{
+                                background: "#4ea5de",
+                                color: "black"
+                            }}
+                        >
+                            Gissa låten
+                        </Button>}
+                    </div>
                 </div>}
             </div>
         </div>
