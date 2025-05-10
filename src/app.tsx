@@ -4,11 +4,6 @@ import Layout from './layout'
 import { ROUTE_SETUP } from './infrastructure/route-setup'
 
 export default function App() {
-
-    const noRoute = () => {
-        return <p>404 NOT FOUND</p>
-    }
-
     return (
         <Routes>
             <Route path="/" element={<Layout />}>
@@ -21,7 +16,6 @@ export default function App() {
                         />
                     })
                 })}
-                <Route path="*" element={noRoute()} />
             </Route>
         </Routes>
     )

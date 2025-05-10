@@ -18,7 +18,7 @@ export const ROUTE_SETUP: RouteCategory[] = [
                 name: "Start - Välkommen",
                 path: ROUTE_PATH_WELCOME,
                 icon: <HomeIcon />,
-                component: <p>asdf</p>
+                component: <Track />
             }
         ]
     },

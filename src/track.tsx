@@ -188,7 +188,7 @@ export default function Track() {
     return (
         <div className='wrapper'>
             <div className='item'>
-                <div className="item-content">
+                {trackIndex !== undefined && <div className="item-content">
                     <audio controls src={track.file} />
                     <TextField
                         type='text'
@@ -258,7 +258,7 @@ export default function Track() {
                         {getTotalScore() <= 3 && getTotalScore() >= 1 && <p>...nja MYCKET mer än hade jag väntat mig. Akila ge Leo lite smisk!</p>}
                         {getTotalScore() === 0 && <p>Men... Men... Leo och Akhila... FAN va besviken jag är...</p>}
                     </div>}
-                </div>
+                </div>}
             </div>
         </div>
     )
