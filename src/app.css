@@ -28,7 +28,7 @@
 .item-content {
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  height: 70vh;
   justify-content: space-between;
 }
 
