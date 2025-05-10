@@ -50,7 +50,6 @@ import { useParams } from "react-router-dom";
 import './app.css';
 import { Button, TextField } from "@mui/material";
 import { useState } from "react";
-import QuestionMarkIcon from '@mui/icons-material/QuestionMark';
   
 interface Track {
     artist: string,
@@ -240,7 +239,6 @@ export default function Track() {
                     />
                     {guessScore === undefined && <Button
                         id={`info-button`}
-                        endIcon={<QuestionMarkIcon />}
                         variant="contained"
                         onClick={validateGuess}
                         sx={{
@@ -255,7 +253,7 @@ export default function Track() {
                         {getTotalScore() === 9 && <p>GODE GUD!!! Sjukt imponerande! Fan vilket kejsarpar ni är! Jag bugar framförer er djupt</p>}
                         {getTotalScore() <= 8 && getTotalScore() >= 6 && <p>Fantastisk! Akhila, jag är glad att du hittad Leo</p>}
                         {getTotalScore() <= 5 && getTotalScore() >= 4 && <p>Snyggt! Ni är gryma tillsamans, jag blir glad varje gång jag ser er!</p>}
-                        {getTotalScore() <= 3 && getTotalScore() >= 1 && <p>...nja MYCKET mer än hade jag väntat mig. Akila ge Leo lite smisk!</p>}
+                        {getTotalScore() <= 3 && getTotalScore() >= 1 && <p>...nja MYCKET mer än hade jag väntat mig. Akhila ge Leo lite smisk!</p>}
                         {getTotalScore() === 0 && <p>Men... Men... Leo och Akhila... FAN va besviken jag är...</p>}
                     </div>}
                 </div>}
