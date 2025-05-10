@@ -57,6 +57,7 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEBAPP_UI_TOKEN_PRODUCTION }}
           action: "upload"
+          app_location: "."
 
       - name: Delete deploy artifact
         if: always()

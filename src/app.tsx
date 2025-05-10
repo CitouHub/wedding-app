@@ -1,12 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Outlet } from 'react-router-dom'
 import './app.css'
-import Layout from './layout'
 import { ROUTE_SETUP } from './infrastructure/route-setup'
 
 export default function App() {
     return (
         <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route path="/" element={<Outlet />}>
                 {ROUTE_SETUP.map(c => {
                     return c.routes.map(r => {
                         return <Route
