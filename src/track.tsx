@@ -116,7 +116,7 @@ const Tracks: Track[] = [
     { artist: "The Knife", year: 2001, title: "Neon", file: track48 }
 ]
 
-export function Track() {
+export default function Track() {
     const { trackIndex } = useParams();
     const [guess, setGuess] = useState<Track>({
         artist: "",
@@ -240,7 +240,6 @@ export function Track() {
                     />
                     {guessScore === undefined && <Button
                         id={`info-button`}
-                        loadingPosition="start"
                         endIcon={<QuestionMarkIcon />}
                         variant="contained"
                         onClick={validateGuess}

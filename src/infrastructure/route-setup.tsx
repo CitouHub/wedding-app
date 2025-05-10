@@ -5,7 +5,8 @@ import {
     ROUTE_PATH_CONSTRUCTION_PROJECT,
     ROUTE_PATH_RISK_ASSESSMENT,
     ROUTE_PATH_CUSTOMER_ORDER,
-    ROUTE_PATH_CUSTOMER_ORDER_ADD_RISK
+    ROUTE_PATH_CUSTOMER_ORDER_ADD_RISK,
+    ROUTE_PATH_TRACK
 } from "./route";
 import { RouteCategory } from './route-category';
 import Welcome from '../section/-welcome/welcome';
@@ -13,12 +14,14 @@ import ConstructionProjectList from '../section/-construction-project/constructi
 import RiskAssessmentHandler from '../section/-risk-assessment/risk-assessment-handler';
 import RiskAssessmentCustomHandler from '../section/-risk-assessment-add/risk-assessment-add-handler';
 import CustomerOrderHandler from '../section/-customer-order/customer-order-handler';
+import Track from '../track';
 
 export const ROUTE_CATEGORY_WELCOME_TITLE = "Start";
 export const ROUTE_CATEGORY_CONSTRUCTION_PROJECT_TITLE = "Byggprojekt";
 export const ROUTE_CATEGORY_RISK_ASSESSMENT_TITLE = "Riskbedömning";
 export const ROUTE_CATEGORY_CUSTOMER_ORDER_TITLE = "Kundorder";
 export const ROUTE_CATEGORY_CUSTOMER_ORDER_ADD_RISK_TITLE = "Lägg till egen risk";
+export const ROUTE_CATEGORY_TRACK_TITLE = "Gissa låten";
 
 export const ROUTE_SETUP: RouteCategory[] = [
     {
@@ -73,6 +76,17 @@ export const ROUTE_SETUP: RouteCategory[] = [
                 path: ROUTE_PATH_CUSTOMER_ORDER_ADD_RISK,
                 icon: <ConstructionIcon />,
                 component: <RiskAssessmentCustomHandler />
+            }
+        ]
+    },
+    {
+        title: ROUTE_CATEGORY_TRACK_TITLE,
+        routes: [
+            {
+                name: ROUTE_CATEGORY_TRACK_TITLE,
+                path: ROUTE_PATH_TRACK,
+                icon: <ConstructionIcon />,
+                component: <Track />
             }
         ]
     }
