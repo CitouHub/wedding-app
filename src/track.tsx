@@ -193,12 +193,14 @@ export default function Track() {
                         {guessScore !== undefined && <div style={{ maxWidth: '300px', paddingTop: '1rem' }}>
                             Poäng totalt: {getTotalScore()}
                             {getTotalScore() === 9 && <p>GODE GUD!!! Sjukt imponerande! Jag bugar framförer inför dig, så grym hade jag ALDRIG trott att du skulle vara. Bara EN person är bättre, Akhila ;)</p>}
-                            {getTotalScore() <= 8 && getTotalScore() >= 7 && <p>DET! VAR! SOM! FAM! Du är ju helt HELT fantastisk då detta, mycket bättre än jag trott kära vän!</p>}
-                            {getTotalScore() <= 7 && getTotalScore() >= 6 && <p>Fantastisk! Nu ligger du på en nivå som får mig att känna att är förtjänt av ett liv med Akhila!</p>}
-                            {getTotalScore() <= 6 && getTotalScore() >= 5 && <p>Ohhhh snyggt! Men jag trodde du du skulle vara liiiite bättre, kom igen!</p>}
-                            {getTotalScore() <= 5 && getTotalScore() >= 4 && <p>Nice! Men inte super nice, du kan bättre!</p>}
-                            {getTotalScore() <= 4 && getTotalScore() >= 3 && <p>Inte HELT värdelöst, meeeeen ganska, jag vet ju att du är bättre än såhär. Jaja, skyll på stavningen bara...</p>}
-                            {getTotalScore() <= 2 && getTotalScore() >= 1 && <p>...Det där var ju inte så bra, jag trodde du skulle vara MYCKET bättre!</p>}
+                            {getTotalScore() === 8 && <p>DET! VAR! SOM! FAM! Du är ju helt HELT fantastisk då detta, mycket bättre än jag trott kära vän!</p>}
+                            {getTotalScore() === 7 && <p>Fantastisk! Nu ligger du på en nivå som får mig att känna att är förtjänt av ett liv med Akhila!</p>}
+                            {getTotalScore() === 6 && <p>Ohhhh snyggt! Men jag trodde du du skulle vara liiiite bättre, kom igen!</p>}
+                            {getTotalScore() === 5 && <p>Nice! Men inte super nice, du kan bättre!</p>}
+                            {getTotalScore() === 4 && <p>Inte HELT värdelöst, meeeeen ganska, jag vet ju att du är bättre än såhär. Jaja, skyll på stavningen bara...</p>}
+                            {getTotalScore() === 3 && <p>...Det där var ju inte så bra, jag trodde du skulle vara MYCKET bättre!</p>}
+                            {getTotalScore() === 2 && <p>Tur är väl det ända jag kan säg, du chansade hejvilt och fick några stakars poäng</p>}
+                            {getTotalScore() === 1 && <p>Jaaaa du... vad ska man säga, SKIT! Något LITE kände du till, väldgt litet, jag skäms...</p>}
                             {getTotalScore() === 0 && <p>Men... Men... Leo... FAN va besviken jag är... Kommer du inte ihåg våra klubbår? :( Tar du en 0:a till så åker jag fan hem igen! Inget vittne och ingen Rikard!</p>}
                         </div>}
                         <TextField
