@@ -46,6 +46,7 @@ import track45 from "./assets/The Bloody beetroots - 01 - Warp 1.9 (FEAT. Steve 
 import track46 from "./assets/The Egg - Walking away.mp3";
 import track47 from "./assets/The Knife - 01 - Heartbeats.mp3";
 import track48 from "./assets/The Knife - 01 - Neon.mp3";
+
 import { useParams } from "react-router-dom";
 import './app.css';
 import { Button, TextField } from "@mui/material";
@@ -65,7 +66,7 @@ interface Score {
 }
 
 const Tracks: Track[] = [
-    { artist: "Parov Stelar", year: 2012, title: "I Remember", file: track1 },
+    { artist: "Parov Stelar", year: 2012, title: "Jimmy's Gang", file: track1 },
     { artist: "Daft Punk", year: 2013, title: "Get Lucky", file: track2 },
     { artist: "Adrian Lux", year: 2010, title: "Teenage Crime", file: track3 },
     { artist: "Deadmau5", year: 2002, title: "I Remember", file: track4 },
@@ -75,10 +76,10 @@ const Tracks: Track[] = [
     { artist: "80kidz", year: 2009, title: "This is my shit", file: track8 },
     { artist: "Adam Beyer", year: 2005, title: "Redemption", file: track9 },
     { artist: "Alter ego", year: 2007, title: "Why not", file: track10 },
-    { artist: "Anthony Rother", year: 2004, title: "In my mind", file: track11 },
-    { artist: "Antiloop", year: 1997, title: "I Remember", file: track12 },
+    { artist: "Anthony Rother", year: 2004, title: "Father", file: track11 },
+    { artist: "Antiloop", year: 1997, title: "In my mind", file: track12 },
     { artist: "Bag raiders", year: 2007, title: "Fun punch", file: track13 },
-    { artist: "Bag raiders", year: 2008, title: "I Remember", file: track14 },
+    { artist: "Bag raiders", year: 2008, title: "Shooting stars", file: track14 },
     { artist: "Basement Jaxx", year: 2005, title: "Wheres your head at", file: track15 },
     { artist: "Bingo Players", year: 2008, title: "Rattle", file: track16 },
     { artist: "BLAMMA! BLAMMA!", year: 2009, title: "Carry me home", file: track17 },
